@@ -1,0 +1,51 @@
+{
+  "name": "baseproject",
+  "version": "1.0.0",
+  "description": "Base Project for SSR React",
+  "main": "./src/index.js",
+  "scripts": {
+    "start-noSSR": "webpack serve --mode development",
+    "dev:build-client": "webpack --config webpack.client.js --mode development -w --env BUILD_ENV=development",
+    "dev:build-server": "webpack --config webpack.server.js --mode development -w --env BUILD_ENV=development",
+    "dev:start": "nodemon ./server-build/index.js",
+    "dev": "npm-run-all --parallel dev:*",
+    "prod:build-server": "webpack --config webpack.server.js --mode production --env BUILD_ENV=production",
+    "prod:build-client": "webpack --config webpack.client.js --mode production --env BUILD_ENV=production",
+    "prod:start": "node ./server-build/index.js",
+    "prod": "npm-run-all --parallel prod:*"
+  },
+  "author": "akhilesh.pandey@unthinkable.co",
+  "license": "ISC",
+  "dependencies": {
+    "@loadable/component": "^5.15.3",
+    "@loadable/server": "^5.15.3",
+    "express": "^4.18.2",
+    "npm-run-all": "^4.1.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@loadable/babel-plugin": "^5.15.3",
+    "@loadable/webpack-plugin": "^5.15.2",
+    "babel-loader": "^9.1.2",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.2",
+    "node-sass": "^8.0.0",
+    "nodemon": "^2.0.20",
+    "postcss-loader": "^7.0.2",
+    "sass": "^1.58.3",
+    "sass-loader": "^13.2.0",
+    "style-loader": "^3.3.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
