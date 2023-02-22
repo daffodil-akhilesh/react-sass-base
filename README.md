@@ -55,6 +55,9 @@
 6. delete window.PRELOADED_STATE
 7. create store with this preloadedState as initialState
 
+# Route DATA fetching
+1. this is entirely based on you how you want to implement
+
 
 # DEV BUILD
 1. Client Build : npm run dev:build-client
