@@ -57,12 +57,12 @@
 
 
 # DEV BUILD
-## Client Build : npm run dev:build-client
-## Server Build : npm run dev:build-server
-## Server Start: npm run dev:start
+1. Client Build : npm run dev:build-client
+2. Server Build : npm run dev:build-server
+3. Server Start: npm run dev:start
 
 # PROD BUILD
-## Client Build : npm run prod:build-client
-## Server Build : npm run prod:build-server
-## Server Start: npm run prod:start
+1. Client Build : npm run prod:build-client
+2. Server Build : npm run prod:build-server
+3. Server Start: npm run prod:start
 
