@@ -4,7 +4,7 @@
   "description": "Base Project for SSR React",
   "main": "./src/index.js",
   "scripts": {
-    "start-noSSR": "webpack serve --mode development",
+    "start-noSSR": "webpack serve --mode development --config webpack.client.js",
     "dev:build-client": "webpack --config webpack.client.js --mode development -w --env BUILD_ENV=development",
     "dev:build-server": "webpack --config webpack.server.js --mode development -w --env BUILD_ENV=development",
     "dev:start": "nodemon ./server-build/index.js",
