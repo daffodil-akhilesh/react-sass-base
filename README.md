@@ -42,3 +42,27 @@
 
 # SSR Redux Setup
 ## Links
+1. https://redux.js.org/usage/server-rendering
+
+## SSR - server flow -> 
+1. Create fresh Instance of store
+2. Pre Data fetching based on route(eg. /home) using this store. 
+3. this data is stored on this store instance.
+4. get this data from store for that route and add to window object using script tag
+   namely : `<script> window.PRELOADED_STATE = store.getState() </script>`
+5. get this data on the client side and store this data as: 
+   const preloadedState = window.PRELOADED_STATE;
+6. delete window.PRELOADED_STATE
+7. create store with this preloadedState as initialState
+
+
+# DEV BUILD
+## Client Build : npm run dev:build-client
+## Server Build : npm run dev:build-server
+## Server Start: npm run dev:start
+
+# PROD BUILD
+## Client Build : npm run prod:build-client
+## Server Build : npm run prod:build-server
+## Server Start: npm run prod:start
+

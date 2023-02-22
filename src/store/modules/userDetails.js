@@ -12,6 +12,36 @@ const intialState = {
   isError: false,
 };
 
+export const getUserDetails = () => {
+  return (dispatch) => {
+    try {
+      dispatch({
+        type: FETCH_USER_DETAILS_PROGRESS
+      });
+      setTimeout(() => {
+        const firstName = localStorage.getItem("firstName");
+        const lastName = localStorage.getItem("lastName");
+        const userName = localStorage.getItem("userName");
+        const email = localStorage.getItem("email");
+        dispatch({
+          type: FETCH_USER_DETAILS_SUCCESS,
+          payload: {
+            firstName,
+            lastName,
+            userName,
+            email
+          }
+        });
+      }, 400);
+    }
+    catch (err) {
+      dispatch({
+        type: FETCH_USER_DETAILS_FAILED
+      })
+    }
+  }
+};
+
 const getReducer = {
   [FETCH_USER_DETAILS_PROGRESS]: ({ state, action }) => (
     {
