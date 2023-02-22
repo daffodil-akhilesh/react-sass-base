@@ -32,3 +32,13 @@
 ## Links
 1. https://webpack.js.org/guides/code-splitting/
 2. https://www.codemzy.com/blog/how-to-name-webpack-chunk
+
+# Redux Setup
+## Links
+1. https://javascript.plainenglish.io/how-to-set-up-redux-thunk-on-a-react-project-79b0c29c96db
+2. https://react-redux.js.org/tutorials/quick-start
+3. https://redux.js.org/introduction/getting-started
+4. https://github.com/reduxjs/redux-thunk
+
+# SSR Redux Setup
+## Links

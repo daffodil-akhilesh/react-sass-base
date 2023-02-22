@@ -1,5 +1,7 @@
 const path = require("path");
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const LoadablePlugin = require('@loadable/webpack-plugin');
 
 module.exports = (env) => {
@@ -13,6 +15,13 @@ module.exports = (env) => {
       clean: true, // cleans your build folder every time you build
     },
     plugins: [
+      new webpack.DefinePlugin({ // define some build env variables
+        'process.env': {
+          BUILD_ENV: JSON.stringify(env.BUILD_ENV),
+          IS_BROWSER: true,
+        }
+      }),
+      new MiniCSSExtractPlugin(),
       new HtmlWebpackPlugin({
         template: "./src/index.html", // to import index.html file inside index.js
       }),
@@ -32,7 +41,7 @@ module.exports = (env) => {
         },
         {
           test: /\.(s(a|c)ss)$/, // styles files
-          use: ["style-loader", "css-loader", "sass-loader"],
+          use: [MiniCSSExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"],
         },
         {
           test: /\.(png|woff|woff2|eot|ttf|svg)$/, // to import images and fonts

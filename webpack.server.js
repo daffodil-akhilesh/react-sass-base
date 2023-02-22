@@ -1,8 +1,8 @@
 const path = require("path");
+const webpack = require("webpack");
 const nodeExternals = require('webpack-node-externals');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const LoadablePlugin = require('@loadable/webpack-plugin');
-const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
+
 
 module.exports = (env) => {
   return ({
@@ -36,12 +36,12 @@ module.exports = (env) => {
       ],
     },
     plugins: [
-      new CopyWebpackPlugin({
-        patterns: [
-          { from: "./server/index.html", to: "./index.html" },
-        ]
+      new webpack.DefinePlugin({
+        'process.env': {
+          BUILD_ENV: JSON.stringify(env.BUILD_ENV),
+          IS_BROWSER: false,
+        }
       }),
-      new LoadablePlugin()
     ],
   })
 };

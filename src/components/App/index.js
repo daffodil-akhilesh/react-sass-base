@@ -4,7 +4,6 @@ import routes from "../../Routes";
 import './App.scss';
 
 const App = () => (
-  <div>
     <Routes>
       {
         routes.map((route, index) => {
@@ -13,7 +12,6 @@ const App = () => (
         })
       }
     </Routes>
-  </div>
 );
 
 export default App;
