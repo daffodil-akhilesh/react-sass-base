@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
-import LeftArrowIcon from '@react-fe-core/fe-ui-core/packages/SvgIcons/LeftArrowIcon/index';
+import LeftArrowIcon from '@react-fe-core/fe-ui-core/packages/SvgIcons/js/LeftArrowIcon';
 
 import routesPath from '../../Routes/routes';
 import { setUserDetails } from "../../utils";

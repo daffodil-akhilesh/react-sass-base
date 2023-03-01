@@ -19,7 +19,7 @@
   "dependencies": {
     "@loadable/component": "^5.15.3",
     "@loadable/server": "^5.15.3",
-    "@react-fe-core/fe-ui-core": "^1.4.1",
+    "@react-fe-core/fe-ui-core": "^1.5.1",
     "@reduxjs/toolkit": "^1.9.3",
     "express": "^4.18.2",
     "npm-run-all": "^4.1.5",
