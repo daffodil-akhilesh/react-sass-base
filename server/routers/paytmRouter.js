@@ -1,8 +1,8 @@
 import express from "express";
 import axios from "axios";
 import paytmChecksum from "paytmchecksum";
-import getAuthenticationToken from "../middlewares/getAuthenticationToken";
-import authenticate from "../middlewares/authenticate";
+import getAuthenticationToken from "../middlewares/payment/paytm/getAuthenticationToken";
+import authenticate from "../middlewares/payment/paytm/authenticate";
 
 const paytmRouter = express.Router();
 
