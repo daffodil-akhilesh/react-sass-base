@@ -1,24 +1,22 @@
 import express from "express";
 import axios from "axios";
 import paytmChecksum from "paytmchecksum";
+import getAuthenticationToken from "../middlewares/getAuthenticationToken";
+import authenticate from "../middlewares/authenticate";
 
 const paytmRouter = express.Router();
 
 let paytmParams = {};
+
 const PAYTM_REQ_TYPE = "Payment";
 const MERCHANT_KEY = "something";
 const MERCHANT_ID = "something";
 const MERCHANT_WEB_NAME = "Something";
-const CALLBACK_URL = "something";
-const AUTH_TOKEN = "HEXADECIMAL_NUMBER";
+const CALLBACK_URL = "localHost:3500";
 
+paytmRouter.use("*", authenticate);
 
-paytmRouter.use("*", (req, res, next) => {
-  const { authToken } = req.body;
-  const forbiddenResponse = { message: "Not Authorized" };
-  if (authToken !== AUTH_TOKEN) res.status(403).send(JSON.stringify(forbiddenResponse));
-  else next();
-})
+paytmRouter.use("/getAuthenticationToken", getAuthenticationToken);
 
 paytmRouter.post("/initiatePayment", (req, res) => {
   const { orderId, amount, userId } = req.body;

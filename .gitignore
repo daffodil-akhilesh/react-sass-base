@@ -2,3 +2,4 @@ node_modules
 build
 server-build
 package-lock.json
+authDir/*

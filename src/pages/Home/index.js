@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
-import LeftArrowIcon from '@react-fe-core/fe-ui-core/packages/SvgIcons/js/LeftArrowIcon';
 
 import routesPath from '../../Routes/routes';
 import { setUserDetails } from "../../utils";
@@ -23,7 +22,6 @@ const Home = (props) => {
   return (
     <div> <h1>Home</h1>
       <Link to={routesPath.LOGIN}><h2>LOGIN</h2></Link>
-      <LeftArrowIcon height="60px" width="60px" color="blue" />
       {isLoading && <div>Loading</div>}
       {isUserFetched && (<div><h1>{firstName}</h1><h2>{lastName}</h2><h2>{email}</h2></div>)}
     </div>
